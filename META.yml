@@ -1,0 +1,35 @@
+---
+abstract: unknown
+author:
+  - 'binary.com <rakesh@binary.com>'
+build_requires:
+  List::Util: '0'
+  Test::Exception: '0'
+  Test::More: '0.96'
+  Test::NoWarnings: '0'
+configure_requires:
+  ExtUtils::MakeMaker: '0'
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520'
+keywords:
+  - cache
+  - redisdb
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Math-Util-CalculatedValue
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  List::Util: '0'
+  perl: '5.008004'
+resources:
+  bugtracker: https://github.com/binary-com/perl-Math-Util-CalculatedValue/issues
+  homepage: https://github.com/binary-com/perl-Math-Util-CalculatedValue
+  license: http://dev.perl.org/licenses/
+version: '0.01'
+x_contributors:
+  - 'Rakesh Kumar Shardiwal <shardiwal@cpan.org>'

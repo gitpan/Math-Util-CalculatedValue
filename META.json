@@ -1,0 +1,61 @@
+{
+   "abstract" : "unknown",
+   "author" : [
+      "binary.com <rakesh@binary.com>"
+   ],
+   "dynamic_config" : 1,
+   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520",
+   "keywords" : [
+      "cache",
+      "redisdb"
+   ],
+   "license" : [
+      "unknown"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Math-Util-CalculatedValue",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "inc"
+      ]
+   },
+   "prereqs" : {
+      "build" : {
+         "requires" : {
+            "List::Util" : "0",
+            "Test::Exception" : "0",
+            "Test::More" : "0.96",
+            "Test::NoWarnings" : "0"
+         }
+      },
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "0"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "List::Util" : "0",
+            "perl" : "5.008004"
+         }
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/binary-com/perl-Math-Util-CalculatedValue/issues"
+      },
+      "homepage" : "https://github.com/binary-com/perl-Math-Util-CalculatedValue",
+      "license" : [
+         "http://dev.perl.org/licenses/"
+      ]
+   },
+   "version" : "0.01",
+   "x_contributors" : [
+      "Rakesh Kumar Shardiwal <shardiwal@cpan.org>"
+   ]
+}
