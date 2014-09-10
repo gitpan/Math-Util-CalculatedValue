@@ -1,5 +1,5 @@
 ---
-abstract: unknown
+abstract: 'math adjustment, which can containe another adjustments'
 author:
   - 'binary.com <rakesh@binary.com>'
 build_requires:
@@ -30,6 +30,6 @@ resources:
   bugtracker: https://github.com/binary-com/perl-Math-Util-CalculatedValue/issues
   homepage: https://github.com/binary-com/perl-Math-Util-CalculatedValue
   license: http://dev.perl.org/licenses/
-version: '0.01'
+version: '0.02'
 x_contributors:
   - 'Rakesh Kumar Shardiwal <shardiwal@cpan.org>'

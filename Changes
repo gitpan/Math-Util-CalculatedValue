@@ -1,5 +1,8 @@
 Revision history for Math-Util-CalculatedValue
 
-0.01    Date/time
+0.01    08/09/2014
         First version, released on an unsuspecting world.
+
+0.02    10/09/2014
+        Better way of checking the allowed replacement and inclusion adjustments
 

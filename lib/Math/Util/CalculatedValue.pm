@@ -9,11 +9,11 @@ use List::Util qw(min max);
 
 =head1 NAME
 
-Math::Util::CalculatedValue
+Math::Util::CalculatedValue - math adjustment, which can containe another adjustments
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 =head1 DESCRIPTION
 
@@ -21,7 +21,7 @@ Represents an adjustment to a value (which can contain additional adjustments).
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 SYNOPSIS
 
@@ -168,7 +168,9 @@ sub new {
       if (  defined $minimum
         and defined $maximum
         and $maximum < $minimum );
+
     $self->{validation_methods} = [qw(_validate_all_sub_adjustments)];
+    $self->{calculatedValue} = 1;
 
     my $obj = bless $self, $class;
     return $obj;
@@ -219,12 +221,10 @@ sub include_adjustment {
 
     confess 'Operation [' . $operation . '] is not supported by ' . __PACKAGE__
       unless ( $available_adjustments{$operation} );
-    my $adj_type = ref $adjustment;
-    confess 'Supplied adjustment must be of type '
-      . __PACKAGE__
-      . ' got ['
-      . $adj_type . ']'
-      unless ( $adj_type eq __PACKAGE__ );
+    confess 'Supplied adjustment must be of type ' . __PACKAGE__
+      if !ref($adjustment);
+    confess 'Supplied adjustment must be of type ' . __PACKAGE__
+      if !$adjustment->{calculatedValue};
 
     delete $self->{_cached_amount};
     my $adjustments = $self->{'_adjustments'} || [];
@@ -273,7 +273,10 @@ sub replace_adjustment {
     my ( $self, $replacement ) = @_;
 
     confess 'Replacement is not a CalculatedValue'
-      unless ( ( ref $replacement ) =~ /Math::Util::CalculatedValue/ );
+        if !ref($replacement);
+
+    confess 'Replacement is not a CalculatedValue'
+        if !$replacement->{calculatedValue};
 
     my $replaced = 0;
 
