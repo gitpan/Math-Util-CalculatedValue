@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 50;
+use Test::More tests => 54;
 use Test::NoWarnings;
 use Test::Exception;
 
@@ -87,7 +87,7 @@ throws_ok { $cv->include_adjustment('dance', $applied_wrong) } qr/Operation \[da
   'Throws exception when applying with a non-existent operation';
 is( sprintf("%.3f", $cv->amount), 2.303, '...which leaves the current value unchanged');
 is($cv->peek_amount($name . '_fake'), undef,            '...and does not appear in the stack.');
-throws_ok { $cv->include_adjustment('multiply', 2) } qr/Supplied adjustment must be of type Math::Util::CalculatedValue/,
+throws_ok { $cv->include_adjustment('multiply', 2) } qr/Supplied adjustment must be type of Math::Util::CalculatedValue/,
   'Throws exception when applying a non CalculatedValue';
 is( sprintf("%.3f", $cv->amount), 2.303, '...which leaves the current value unchanged.');
 
@@ -111,7 +111,7 @@ is($cv->replace_adjustment($excl_repl), 10,               'Able to replace the v
 is( sprintf("%.3f", $cv->amount), 6.908, '...which changes the value wildly');
 is($cv->replace_adjustment($excl_calc), 10,               'Can switch all ten back');
 is( sprintf("%.3f", $cv->amount), 4.605, '...which puts it back to its previous crazy value.');
-throws_ok { $cv->replace_adjustment('exclusion') } qr/Replacement is not a CalculatedValue/,
+throws_ok { $cv->replace_adjustment('exclusion') } qr/Supplied replacement must be type/,
   'Trying to replace with a nonCV does not replace anything';
 
 is($cv->exclude_adjustment($excl_calc->name), 10,               'Exclude all 10 applications TO second object');
@@ -217,6 +217,7 @@ is($cv->amount, -2, 'Test for add with negative result');
 
 $cv->include_adjustment('absolute', $cv_neg);
 is($cv->amount, 12, 'Test for absolute');
+is(ref $cv->adjustments, 'ARRAY', 'Adjustments returns array');
 
 my $x = Math::Util::CalculatedValue->new({
         name        => $name . ' 1',
@@ -224,13 +225,22 @@ my $x = Math::Util::CalculatedValue->new({
         set_by      => $set_by,
 });
 is($x->base_amount, 0, 'Test for default base_amount');
+is( ref $x->adjustments, 'ARRAY', 'default adjustments are type of array');
 
-throws_ok { 
+throws_ok {
     Math::Util::CalculatedValue->new({
             description => $desc,
             set_by      => $set_by,
     });
-} qr/missing required/, 'Missing Required Params';
+} qr/Attribute .* is required/, 'Missing Required Params';
+
+throws_ok {
+    $cv->include_adjustment('absolute', {});
+} qr/Supplied adjustment must be type of/, 'must be type of the same PACKAGE';
+
+throws_ok {
+    $cv->replace_adjustment({});
+} qr/Supplied replacement must be type/, 'must be type of the same PACKAGE';
 
 throws_ok { 
     Math::Util::CalculatedValue->new({
