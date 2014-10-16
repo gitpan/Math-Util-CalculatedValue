@@ -6,3 +6,5 @@ Revision history for Math-Util-CalculatedValue
 0.02    10/09/2014
         Better way of checking the allowed replacement and inclusion adjustments
 
+0.05    15/10/2014
+        New Class Validatable

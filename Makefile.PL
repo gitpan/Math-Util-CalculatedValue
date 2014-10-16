@@ -20,13 +20,17 @@ WriteMakefile(
     },
     BUILD_REQUIRES => {
         'List::Util'       => 0,
+        'MooseX::Role::Validatable' => 0,
+        'MooseX::NonMoose' => 0,
         'Test::More'       => 0.96,
         'Test::Exception'  => 0,
         'Test::NoWarnings' => 0,
         'Test::Exception'  => 0
     },
     PREREQ_PM => {
-        'List::Util' => 0
+        'List::Util' => 0,
+        'MooseX::Role::Validatable' => 0,
+        'MooseX::NonMoose' => 0
     },
     META_MERGE => {
         requires  => { perl => 5.008004, },

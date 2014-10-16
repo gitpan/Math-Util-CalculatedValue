@@ -13,7 +13,7 @@ Math::Util::CalculatedValue - math adjustment, which can containe another adjust
 
 =head1 VERSION
 
-Version 0.03
+Version 0.05
 
 =head1 DESCRIPTION
 
@@ -21,7 +21,7 @@ Represents an adjustment to a value (which can contain additional adjustments).
 
 =cut
 
-our $VERSION = '0.03';
+our $VERSION = '0.05';
 
 =head1 SYNOPSIS
 
@@ -169,9 +169,6 @@ sub new {
         and defined $maximum
         and $maximum < $minimum );
 
-    $self->{'validation_methods'} = [qw(_validate_all_sub_adjustments)];
-    $self->{'_validation_errors'} = [];
-    $self->{'_init_errors'}       = [];
     $self->{'calculatedValue'}    = 1;
 
     my $obj = bless $self, $class;

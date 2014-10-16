@@ -27,6 +27,8 @@
       "build" : {
          "requires" : {
             "List::Util" : "0",
+            "MooseX::NonMoose" : "0",
+            "MooseX::Role::Validatable" : "0",
             "Test::Exception" : "0",
             "Test::More" : "0.96",
             "Test::NoWarnings" : "0"
@@ -40,6 +42,8 @@
       "runtime" : {
          "requires" : {
             "List::Util" : "0",
+            "MooseX::NonMoose" : "0",
+            "MooseX::Role::Validatable" : "0",
             "perl" : "5.008004"
          }
       }
@@ -54,7 +58,7 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.03",
+   "version" : "0.05",
    "x_contributors" : [
       "Rakesh Kumar Shardiwal <shardiwal@cpan.org>"
    ]

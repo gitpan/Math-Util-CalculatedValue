@@ -4,6 +4,8 @@ author:
   - 'binary.com <rakesh@binary.com>'
 build_requires:
   List::Util: '0'
+  MooseX::NonMoose: '0'
+  MooseX::Role::Validatable: '0'
   Test::Exception: '0'
   Test::More: '0.96'
   Test::NoWarnings: '0'
@@ -25,11 +27,13 @@ no_index:
     - inc
 requires:
   List::Util: '0'
+  MooseX::NonMoose: '0'
+  MooseX::Role::Validatable: '0'
   perl: '5.008004'
 resources:
   bugtracker: https://github.com/binary-com/perl-Math-Util-CalculatedValue/issues
   homepage: https://github.com/binary-com/perl-Math-Util-CalculatedValue
   license: http://dev.perl.org/licenses/
-version: '0.03'
+version: '0.05'
 x_contributors:
   - 'Rakesh Kumar Shardiwal <shardiwal@cpan.org>'
