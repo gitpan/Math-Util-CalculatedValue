@@ -12,7 +12,7 @@ Math::Util::CalculatedValue::Validatable - math adjustment, which can containe a
 
 =head1 VERSION
 
-Version 0.01
+Version 0.06
 
 =head1 DESCRIPTION
 
@@ -20,7 +20,7 @@ Represents an adjustment to a value (which can contain additional adjustments) w
 
 =cut
 
-our $VERSION = '0.01';
+our $VERSION = '0.06';
 
 =head1 SYNOPSIS
 
@@ -162,5 +162,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 =cut
 
 no Moose;
+
+__PACKAGE__->meta->make_immutable;
 
 1;    # End of Math::Util::CalculatedValue::Validatable

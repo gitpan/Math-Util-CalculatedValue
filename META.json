@@ -4,7 +4,7 @@
       "binary.com <rakesh@binary.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520",
+   "generated_by" : "ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.142690",
    "keywords" : [
       "cache",
       "redisdb"
@@ -58,7 +58,7 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.05",
+   "version" : "0.06",
    "x_contributors" : [
       "Rakesh Kumar Shardiwal <shardiwal@cpan.org>"
    ]

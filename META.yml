@@ -12,7 +12,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: '0'
 dynamic_config: 1
-generated_by: 'ExtUtils::MakeMaker version 6.66, CPAN::Meta::Converter version 2.141520'
+generated_by: 'ExtUtils::MakeMaker version 6.98, CPAN::Meta::Converter version 2.142690'
 keywords:
   - cache
   - redisdb
@@ -34,6 +34,6 @@ resources:
   bugtracker: https://github.com/binary-com/perl-Math-Util-CalculatedValue/issues
   homepage: https://github.com/binary-com/perl-Math-Util-CalculatedValue
   license: http://dev.perl.org/licenses/
-version: '0.05'
+version: '0.06'
 x_contributors:
   - 'Rakesh Kumar Shardiwal <shardiwal@cpan.org>'
